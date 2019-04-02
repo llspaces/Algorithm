@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * <p>@filename InsertionSort</p>
  * <p>
- * <p>@description 插入排序Java实现:直接插入排序,二分插入排序,希尔排序</p>
+ * <p>@description 插入排序Java实现:直接插入排序,二分插入排序</p>
  *
  * @author liyupeng
  * @version 1.0
@@ -19,7 +19,6 @@ public class InsertionSort {
         int[] result = binaryInsertSort(nums);
         //int[] result = insertionSort(nums);
         //int[] result = insertionSort1(nums);
-        //int[] result = shellSort(nums);
         System.out.println("已排序数组：" + Arrays.toString(result));
     }
 
@@ -109,22 +108,6 @@ public class InsertionSort {
             }
             nums[low] = temp;
         }
-        return nums;
-    }
-
-    /**
-     * 希尔排序
-     *
-     * @param nums
-     * @return
-     */
-    public static int[] shellSort(int[] nums){
-        if(null == nums || nums.length == 0){
-            System.out.println("输入的数组为空!");
-            return null;
-        }
-        int count = 0;
-        System.out.println("shellSort，循环次数：" + count);
         return nums;
     }
 
