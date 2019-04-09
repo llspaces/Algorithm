@@ -40,15 +40,36 @@ public class BubbleSort1 {
         return nums;
     }
 
-    public static int[] bibbleSortOptimize(int[] nums){
+    public static int[] bubbleSortOptimize(int[] nums){
         int count = 0;
         if(null == nums || nums.length == 0){
             System.out.println("输入的数组为空!");
             return null;
         }
 
-
-
+        boolean didSwap;
+        int len = nums.length;
+        int pos = 0;// 记录最后一次交换的位置
+        int k = len - 1;
+        for(int i = 0; i < len - 1; i++) {
+            didSwap = false;
+            for(int j = 0; j < k; j++) {
+                if(nums[j + 1] < nums[j]) {
+                    int temp = nums[j];
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = temp;
+                    //有交换即为true
+                    didSwap = true;
+                    pos = j;
+                }
+                count++;
+            }
+            if(!didSwap){
+                //没发生交换说明有序了
+                break;
+            }
+            k = pos;//最后交换位置赋值给k
+        }
         System.out.println("bibbleSortOptimize循环次数为：" + count);
         return nums;
     }
